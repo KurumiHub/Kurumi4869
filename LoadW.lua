@@ -1,5 +1,5 @@
 local gamelist = {
-        [2961111240] = "https://raw.githubusercontent.com/KurumiHub/Kurumi4869/main/MONSTERGHOUL.lua"
+        [2961111240] = "https://raw.githubusercontent.com/KurumiHub/Kurumi4869/main/W/Monster%20Ghoul%20Type%20W.lua"
     }
     local checkgame = gamelist[game.gameId]
 
