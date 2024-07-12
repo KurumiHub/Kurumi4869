@@ -1,6 +1,61 @@
 if not getfenv().ECL_SECRET_ENV_MAIN then
     return game:GetService("Players").LocalPlayer:Kick("Unauthorized Fluent Modded Use")
 end
+
+local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Parent = game.CoreGui
+
+local notifications = {}
+
+function showNotification(message, duration)
+    local TextLabel = Instance.new("TextLabel")
+    TextLabel.Parent = ScreenGui
+    TextLabel.Text = message
+    TextLabel.Size = UDim2.new(0.3, 0, 0.05, 0) 
+    TextLabel.Position = UDim2.new(0.35, 0, 0.45 + #notifications * 0.07, 0)  
+    TextLabel.TextColor3 = Color3.new(1, 1, 1)
+    TextLabel.TextSize = 30
+    TextLabel.Font = Enum.Font.SourceSansBold
+    TextLabel.BackgroundTransparency = 1
+    TextLabel.TextTransparency = 1
+    table.insert(notifications, TextLabel)
+
+    spawn(function()
+        for i = 1, 10 do
+            TextLabel.TextTransparency = 1 - i * 0.1
+            wait(0.05)
+        end
+
+        wait(duration)
+
+        for i = 1, 10 do
+            TextLabel.TextTransparency = i * 0.1
+            wait(0.05)
+        end
+        
+        TextLabel:Destroy()
+
+        for i, label in ipairs(notifications) do
+            if label == TextLabel then
+                table.remove(notifications, i)
+                break
+            end
+        end
+
+        for i, label in ipairs(notifications) do
+            label.Position = UDim2.new(0.35, 0, 0.45 + (i - 1) * 0.07, 0)
+        end
+    end)
+end
+
+showNotification("Starting Up! Kurumi Hub Script", 3)
+wait(4.5)
+showNotification("Initializing the UI...", 5)
+wait(1)
+showNotification("UI Power By Eclipse", 3) 
+wait(1)
+showNotification("Script Power By Kurumi", 6) 
+
 local a, b = {
     {
         1,
