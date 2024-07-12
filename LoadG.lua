@@ -1,4 +1,4 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/KurumiHub/KurumiAll/main/Test"))()
+
 local gamelist = {
         [2961111240] = "https://raw.githubusercontent.com/KurumiHub/Kurumi4869/main/MonsterGhoul/MG____G.lua",
         [5421640482] = "https://raw.githubusercontent.com/KurumiHub/Kurumi4869/main/JujutsuLegacy/JJKLGX_GP.lua",
